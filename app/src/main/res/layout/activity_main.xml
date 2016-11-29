@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vieModel"
+            type="com.carisma.roomlight.MainActivityViewModel"/>
+        <variable
+            name="listener"
+            type="com.carisma.roomlight.MainActivity"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/room"
+        android:background="@{vieModel.lightOn ? @color/colorRoomBright : @color/colorRoomDark}"
+        android:fitsSystemWindows="true"
+        tools:context="com.carisma.roomlight.MainActivity">
+
+        <Switch
+            android:onCheckedChanged="@{listener.onCheckedChange}"
+            android:layout_margin="8dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/light_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_margin="8dp"
+            android:src="@drawable/bulb"
+            android:id="@+id/bulb"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:tint="@{vieModel.lightOn ? @color/colorBulbOn : @color/colorBulbOff}"/>
+
+        <ImageView
+            android:id="@+id/dude"
+            android:layout_centerInParent="true"
+            android:src="@{vieModel.lightOn ? @drawable/happy : @drawable/sad}"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+
+    </RelativeLayout>
+</layout>
+
