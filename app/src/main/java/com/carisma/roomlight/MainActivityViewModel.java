@@ -10,5 +10,5 @@ import android.databinding.ObservableBoolean;
 
 public class MainActivityViewModel extends BaseObservable {
     @Bindable
-    public ObservableBoolean lightOn = new ObservableBoolean();
+    public final ObservableBoolean lightOn = new ObservableBoolean();
 }
