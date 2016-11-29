@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.setListener(this);
-        binding.setVieModel(viewModel);
+        binding.setViewModel(viewModel);
     }
 
     public void onCheckedChange(CompoundButton button, boolean isChecked) {
